@@ -48,6 +48,7 @@ export default {
       event.preventDefault();
 
       const { username, password, credentials } = this.form;
+      
       //validations
       if (!username || !password) {
         this.alert.show = true;

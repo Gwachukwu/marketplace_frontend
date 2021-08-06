@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Stores from "../components/Stores.vue";
 import EditProfile from "../components/EditProfile.vue";
+import StorePage from "../components/StorePage.vue";
 
 Vue.use(VueRouter);
 
@@ -18,6 +19,10 @@ const routes = [
       {
         path: "/edit-profile",
         component: EditProfile,
+      },
+      {
+        path: "/s/:store_slug",
+        component: StorePage,
       },
     ],
   },
