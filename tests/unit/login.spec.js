@@ -1,5 +1,5 @@
 import Login from '../../src/views/Login.vue'
-import { mount } from '@vue/test-utils'
+import {mount } from '@vue/test-utils'
 
 describe('Login.vue', () => {
     it('renders a greeting', () => {

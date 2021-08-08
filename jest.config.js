@@ -12,6 +12,7 @@ module.exports = {
   },
 
   preset: "@vue/cli-plugin-unit-jest",
-//   collectCoverage: true,
-//   collectCoverageFrom: ["**/*.{js,vue}", "!**/node_modules/**"],
+  // collectCoverage: true,
+  // collectCoverageFrom: ["**/*.{js,vue}", "!**/node_modules/**"],
+setupFilesAfterEnv: ['<rootDir>/tests/unit/vueSetup.js']
 };

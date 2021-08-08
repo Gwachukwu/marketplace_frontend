@@ -1,12 +1,9 @@
 import { mount, createLocalVue } from "@vue/test-utils";
 import StorePage from "../../src/components/StorePage.vue";
 import VueRouter from "vue-router";
-import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 
 const localVue = createLocalVue();
 localVue.use(VueRouter);
-localVue.use(BootstrapVue);
-localVue.use(IconsPlugin);
 const router = new VueRouter();
 
 test("Check conditional renderings", async () => {

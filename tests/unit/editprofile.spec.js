@@ -1,19 +1,8 @@
-import { mount, createLocalVue } from "@vue/test-utils";
+import { mount} from "@vue/test-utils";
 import EditProfile from "../../src/components/EditProfile.vue";
-import VueRouter from "vue-router";
-import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
-
-const localVue = createLocalVue();
-localVue.use(BootstrapVue);
-localVue.use(IconsPlugin);
-localVue.use(VueRouter);
-const router = new VueRouter();
 
 test("Check conditional rendering in EditProfile", async () => {
-  const wrapper = mount(EditProfile, {
-    router,
-    localVue,
-  });
+  const wrapper = mount(EditProfile);
 
   // check if spinner will show on when loading
   expect(wrapper.find("[data-test=spinner]").exists()).toBe(true);
