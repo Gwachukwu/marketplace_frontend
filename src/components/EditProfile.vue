@@ -1,13 +1,14 @@
 <template>
   <div>
     <h1 class="p-4">Edit Profile</h1>
-    <div v-if="isLoading" class="text-center">
+    <div v-if="isLoading" class="text-center" data-test="spinner">
       <b-spinner type="grow"></b-spinner>
     </div>
     <b-form
       v-else
       @submit="onSubmit"
       class="form-container m-auto px-3 py-5 rounded"
+      data-test="edit-profile-form"
     >
       <b-alert :variant="alert.variant" :show="alert.show">{{
         alert.message

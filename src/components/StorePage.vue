@@ -17,6 +17,7 @@
       <b-card-group
         class="d-flex justify-content-evenly flex-wrap"
         v-if="products"
+        data-test="products"
       >
         <div v-for="product in products" :key="product.id">
           <b-card
@@ -44,7 +45,7 @@
 import axios from "axios";
 
 export default {
-  name: "StorePath",
+  name: "StorePage",
   data() {
     return {
       store: null,
