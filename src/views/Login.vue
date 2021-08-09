@@ -16,6 +16,7 @@
           id="username"
           v-model="form.username"
           required
+          class="bg-light"
         ></b-form-input>
       </b-form-group>
 
@@ -25,6 +26,7 @@
           type="password"
           v-model="form.password"
           required
+          class="bg-light"
         ></b-form-input>
       </b-form-group>
 
