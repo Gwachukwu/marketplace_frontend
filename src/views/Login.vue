@@ -1,12 +1,17 @@
 <template>
   <div>
-    <div class="mt-5 pt-5">
+    <div class="mt-5 pt-5 text-center">
       <h1>Welcome to MarketPlace</h1>
       <p>Login to continue</p>
     </div>
     <b-form @submit="onSubmit" class="form-container m-auto px-3 py-5 rounded">
       <b-alert variant="danger" :show="alert.show">{{ alert.message }}</b-alert>
-      <b-form-group id="username" label="Username:" label-for="username">
+      <b-form-group
+        id="username"
+        label="Username:"
+        label-for="username"
+        class="mb-2"
+      >
         <b-form-input
           id="username"
           v-model="form.username"
@@ -23,7 +28,9 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-button type="submit" variant="primary" class="mt-2">Login</b-button>
+      <b-button type="submit" variant="primary" class="d-block mt-2 mx-auto"
+        >Login</b-button
+      >
     </b-form>
   </div>
 </template>
@@ -48,7 +55,7 @@ export default {
       event.preventDefault();
 
       const { username, password, credentials } = this.form;
-      
+
       //validations
       if (!username || !password) {
         this.alert.show = true;

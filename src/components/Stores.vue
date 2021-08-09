@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-center">
     <h1 class="p-2">Stores</h1>
     <div class="d-flex justify-content-evenly flex-wrap">
       <div v-for="store in storesData" :key="store.store_slug">

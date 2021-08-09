@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="p-4">Edit Profile</h1>
+    <h1 class="p-4 text-center">Edit Profile</h1>
     <div v-if="isLoading" class="text-center" data-test="spinner">
       <b-spinner type="grow"></b-spinner>
     </div>
@@ -13,7 +13,7 @@
       <b-alert :variant="alert.variant" :show="alert.show">{{
         alert.message
       }}</b-alert>
-      <b-form-group id="email" label="Email:" label-for="email">
+      <b-form-group id="email" label="Email:" label-for="email" class="mb-2">
         <b-form-input
           id="email"
           type="email"
@@ -23,7 +23,12 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="firstName" label="First Name:" label-for="firstName">
+      <b-form-group
+        id="firstName"
+        label="First Name:"
+        label-for="firstName"
+        class="mb-2"
+      >
         <b-form-input
           id="firstName"
           v-model="form.firstName"
@@ -31,7 +36,12 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="lastName" label="Last Name:" label-for="lastName">
+      <b-form-group
+        id="lastName"
+        label="Last Name:"
+        label-for="lastName"
+        class="mb-2"
+      >
         <b-form-input
           id="lastName"
           v-model="form.lastName"
@@ -39,7 +49,12 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="location" label="Location:" label-for="location">
+      <b-form-group
+        id="location"
+        label="Location:"
+        label-for="location"
+        class="mb-2"
+      >
         <b-form-input
           id="location"
           v-model="form.location"
@@ -50,7 +65,7 @@
       <b-button
         type="submit"
         variant="primary"
-        class="mt-2"
+        class="d-block mt-2 mx-auto"
         :disabled="form.processing"
         >{{ form.processing ? "Please wait..." : "Update" }}</b-button
       >
@@ -118,7 +133,6 @@ export default {
       axios
         .get(`${process.env.VUE_APP_API}/users`)
         .then((res) => {
-          
           const {
             firstName,
             lastName,
@@ -139,6 +153,13 @@ export default {
   },
   mounted: function () {
     this.getUser();
+  },
+  beforeDestroy: function () {
+    this.form.firstName = "";
+    this.form.lastName = "";
+    this.form.email = "";
+    this.form.location = "";
+    this.userId = "";
   },
 };
 </script>

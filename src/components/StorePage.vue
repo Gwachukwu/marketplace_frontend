@@ -12,7 +12,7 @@
     >
       <b-spinner type="grow"></b-spinner>
     </div>
-    <h1 class="text-capitalize p-3" v-if="store">{{ store }}</h1>
+    <h1 class="text-capitalize p-3 text-center" v-if="store">{{ store }}</h1>
     <div>
       <b-card-group
         class="d-flex justify-content-evenly flex-wrap"
