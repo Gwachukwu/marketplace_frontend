@@ -14,6 +14,6 @@ test("Check conditional rendering in EditProfile", async () => {
 
   // check if spinner will show on when loading
   expect(wrapper.find("[data-test=spinner]").exists()).toBe(false);
-  //check if form render when loading
+  //check if form render when loading is complete
   expect(wrapper.find('[data-test="edit-profile-form"]').exists()).toBe(true);
 });
