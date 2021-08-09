@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Stores from "../components/Stores.vue";
 import EditProfile from "../components/EditProfile.vue";
 import StorePage from "../components/StorePage.vue";
+import { protectRoute } from "./protectRoute";
 
 Vue.use(VueRouter);
 
@@ -11,6 +12,7 @@ const routes = [
   {
     path: "/",
     component: Home,
+    beforeEnter:protectRoute,
     children: [
       {
         path: "/",

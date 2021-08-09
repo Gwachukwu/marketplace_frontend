@@ -22,15 +22,15 @@
 <script>
 export default {
   name: "NavBar",
-   methods:{
-    logout(){
-     localStorage.clear();
-     this.$router.push("/login");
+  methods: {
+    logout() {
+      localStorage.clear();
+      this.$router.push("/login");
     },
-    gotoEdit(){
-       this.$router.push("/edit-profile");
-    }
-  }
+    gotoEdit() {
+      this.$router.push("/edit-profile");
+    },
+  },
 };
 </script>
 

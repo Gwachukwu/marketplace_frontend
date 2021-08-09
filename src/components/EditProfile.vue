@@ -52,7 +52,7 @@
         variant="primary"
         class="mt-2"
         :disabled="form.processing"
-        >{{ form.processing ? "Please wait..." : "Login" }}</b-button
+        >{{ form.processing ? "Please wait..." : "Update" }}</b-button
       >
     </b-form>
   </div>
@@ -118,6 +118,7 @@ export default {
       axios
         .get(`${process.env.VUE_APP_API}/users`)
         .then((res) => {
+          
           const {
             firstName,
             lastName,
@@ -125,6 +126,7 @@ export default {
             location,
             _id: id,
           } = res.data.user;
+
           this.form.firstName = firstName;
           this.form.lastName = lastName;
           this.form.email = email;
